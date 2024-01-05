@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=0 python -m torch.distributed.launch --nproc_per_node=1 --use_env train.py --batch_size 4 --lr_bert 0.00001 --aug_crop --aug_scale --backbone resnet50 --detr_model ./checkpoints/detr-r50-referit.pth --bert_enc_num 12 --detr_enc_num 6 --dataset unc --max_query_len 312 --output_dir outputs/referit_r50 --epochs 90 --lr_drop 60
